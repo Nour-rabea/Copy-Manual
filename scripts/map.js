@@ -5,9 +5,9 @@ $(window).on('load', function() {
   var polygonSettings = [];
   var polygonsLegend;
 
-  var completePoints = false;
-  var completePolygons = false;
-  var completePolylines = false;
+  var completePoints = true;
+  var completePolygons = true;
+  var completePolylines = true;
 
   /**
    * Returns an Awesome marker with specified parameters
@@ -29,7 +29,7 @@ $(window).on('load', function() {
   function centerAndZoomMap(points) {
     var lat = map.getCenter().lat, latSet = false;
     var lon = map.getCenter().lng, lonSet = false;
-    var zoom = 12, zoomSet = false;
+    var zoom = 10, zoomSet = true;
     var center;
 
     if (getSetting('_initLat') !== '') {
