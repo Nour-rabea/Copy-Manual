@@ -5,9 +5,9 @@ $(window).on('load', function() {
   var polygonSettings = [];
   var polygonsLegend;
 
-  var completePoints = true;
-  var completePolygons = true;
-  var completePolylines = true;
+  var completePoints = false;
+  var completePolygons = false;
+  var completePolylines = false;
 
   /**
    * Returns an Awesome marker with specified parameters
@@ -29,7 +29,7 @@ $(window).on('load', function() {
   function centerAndZoomMap(points) {
     var lat = map.getCenter().lat, latSet = false;
     var lon = map.getCenter().lng, lonSet = false;
-    var zoom = 10, zoomSet = true;
+    var zoom = 10, zoomSet = false;
     var center;
 
     if (getSetting('_initLat') !== '') {
@@ -127,7 +127,10 @@ $(window).on('load', function() {
         var marker = L.marker([point.Latitude, point.Longitude], {icon: icon})
           .bindPopup("<b>" + point['Project'] + '</b><br>' +
           (point['Image'] ? ('<img src="' + point['Image'] + '"><br>') : '') +
-          point['Description']);
+          point['Description'] + '</b><br>' +
+          point['Hotline'] + '</b><br>' +
+          point['Website'] + '</b><br>' +
+          point['Head Offices']);
 
         if (layers !== undefined && layers.length !== 1) {
           marker.addTo(layers[point.Group]);
