@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="./favicon.png">
 
-  <title>Loading the map...</title>
+  <title>Maping...</title>
 
   <!-- jQuery-->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -67,7 +67,7 @@
     <script language="javascript">
 <!--hide
 var password;
-var pass1="nnn";
+var pass1="";
 password=prompt('You Have To Get Permission or Be a Family Member','');
 if (password==pass1);
 else {
@@ -85,7 +85,11 @@ else {
       attributionControl: false,
       zoomControl: false,
       scrollWheelZoom: true
-    }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
+    }).setView([30.02,31.55], 11); // default center is overridden by Google Sheet options and points
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    maxZoom: 19,
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+})
   </script>
 
   <script type="text/javascript" src="./google-doc-url.js"></script>
